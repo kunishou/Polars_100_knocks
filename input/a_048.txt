@@ -1,0 +1,23 @@
+[answer48]
+
+df = df.with_column(
+    pl.concat_str(pl.col(["age", "embarked"]), "_")
+    .alias("test")
+    )
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・concat_strを使用して結合することも可能
+・concat_strを用いて結合する場合は、数値列の文字列型への
+　変換は不要
+
+----------------------------------------------
+
+[参考] pandas記法
+
+
+df['test'] = df['age'].astype(str).str.cat(df['embarked'],sep='_')
+df.head()

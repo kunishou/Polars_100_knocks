@@ -1,0 +1,23 @@
+[answer38]
+
+df = df.with_column(pl.when(pl.col('sex')=='male').then(0)
+                        .when(pl.col('sex')=='female').then(1)
+                        .otherwise(pl.col('sex')).cast(pl.Int64).alias('sex')
+                      )
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・「'male'に該当する場合は0に、'female'に該当する場合は1に置換し、どちらにも
+　該当しない場合は元のデータを保持する」という解答になっています
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['sex'][df['sex'] == 'male'] = 0
+df['sex'][df['sex'] == 'female'] = 1
+df.head()
+

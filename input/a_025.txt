@@ -1,0 +1,21 @@
+[answer25]
+
+df_copy = df.select(['name', 'age', 'sex'])
+df_copy.write_csv('../output/sample.csv')
+
+
+----------------------------------------------
+
+[Tips]
+・write_csvでcsv形式で出力
+・列名を削除して出力したいときは
+　has_header=Falseをつける
+・エンコード形式はutf8のみ
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df_copy = df[['name','age','sex']]
+df_copy.to_csv('../output/sample.csv')
+

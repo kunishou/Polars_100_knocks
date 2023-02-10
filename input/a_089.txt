@@ -1,0 +1,22 @@
+[answer89]
+
+df = pl.concat([df.drop('sex'), df.select(pl.col('sex')).to_dummies()], how='horizontal')
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・機械学習では文字列をそのまま、学習アルゴリズムに
+　入力できないため、数値に変換する。to_dummies()では
+　One-Hotエンコーディングが可能
+・回帰問題を解く場合には、One-hotエンコーディングする
+　ことが多い
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df = pd.get_dummies(df, columns=['sex'])
+df.head()
+

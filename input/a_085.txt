@@ -1,0 +1,22 @@
+[answer85]
+
+df = df.with_row_count()
+
+display(df.filter(pl.col('fare') == pl.col('fare').max()))
+display(df.filter(pl.col('fare') == pl.col('fare').min()))
+
+※ print出力よりもdisplay出力のほうが見やすかったためここでは
+　 displayを使っています
+
+----------------------------------------------
+
+[Tips]
+特になし
+
+----------------------------------------------
+
+[参考] pandas記法
+
+print(df['fare'].idxmax())
+print(df['fare'].idxmin())
+

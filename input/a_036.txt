@@ -1,0 +1,25 @@
+[answer36]
+
+for col in df.get_columns():
+    display(col.value_counts())
+
+
+----------------------------------------------
+
+[Tips]
+・get_columns()を用いるとdataframe内の列を
+　リストで取得できる（print(df.get_columns()を
+　実行してみるとリストになっています)）
+・解答内のdisplayはprintでも問題ないです（dataframeで出力したときは
+　display、文字列で出力したい場合はprint）print出力が見づらいときは
+　display出力を試してみて下さい
+・get_columns()[列番号]と書くと特定の列をseriesとして
+　抽出できる
+
+----------------------------------------------
+
+[参考] pandas記法
+
+
+for col in df.columns.to_list():
+    display(df[col].value_counts())

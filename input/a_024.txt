@@ -1,0 +1,24 @@
+[answer24]
+
+df.select(df.columns[2:10])[:5]
+
+[別解]
+
+df.select(df.columns[df.find_idx_by_name('name'):df.find_idx_by_name('cabin')+1])[:5]
+
+[別解2]
+
+df[:5, 'name':'cabin']
+
+----------------------------------------------
+
+[Tips]
+・find_idx_by_name('列名')で列番号を指定することも可能
+・Polarsでも別解2のようにpandasのような記法は可能であるが
+　非推奨。将来的なバージョンアップで使用できなくなる可能性ありとのこと。
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.loc[:5,'name':'cabin']

@@ -1,0 +1,18 @@
+[answer50]
+
+df = df.with_row_count().filter(pl.col('row_nr') != 3)
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・with_row_count()でインデックスを振ることができる
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df = df.drop(3,axis=0)
+df.head()
+

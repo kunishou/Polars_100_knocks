@@ -1,0 +1,42 @@
+[answer88]
+
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder() #ラベルエンコーダのインスタンスを作成
+sex = df.select(pl.col('sex')).to_numpy()
+labels = le.fit_transform(sex)
+df = df.with_column(pl.Series(labels).alias("sex"))
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・pyarrowをpip installしていないとエンコーディング後の値が
+　おかしくなるので注意する。
+
+　（参考）polarsでLabelEncoderを使おうとしたら詰まった話
+　https://zenn.dev/gamera/articles/cd0f49c8ae74f6?utm_source=pocket_saves
+
+・機械学習では文字列をそのまま、学習アルゴリズムに
+　入力できないため、数値に変換する。LabelEncoder()では
+　例えば、以下のように文字列を数値に変換する。
+
+　male → 0
+　female → 1
+
+・RandomForestなど決定木での分類問題を
+　解く場合には、ラベルエンコーディングする
+　ことが多い
+
+----------------------------------------------
+
+[参考] pandas記法
+
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder() #ラベルエンコーダのインスタンスを作成
+
+df['sex'] = le.fit_transform(df['sex']) #エンコーディング
+df.head()
+

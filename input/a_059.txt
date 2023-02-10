@@ -1,0 +1,16 @@
+[answer59]
+
+df.select(pl.col('name').str.to_uppercase())
+
+
+----------------------------------------------
+
+[Tips]
+str.to_uppercase()で小文字を大文字に変換
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['name'].str.upper()
+

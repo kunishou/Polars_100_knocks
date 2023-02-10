@@ -1,0 +1,24 @@
+[answer79]
+
+df2.drop_in_place('name')
+print(df2.groupby(['class']).max())
+print(df2.groupby(['class']).min())
+print(df2.groupby(['class']).mean())
+
+
+----------------------------------------------
+
+[Tips]
+指定の列名でグルーピングしたい場合は
+groupby('列名')を使用する
+
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 =df2.drop('name',axis=1)
+print(df2.groupby('class').max())
+print(df2.groupby('class').min())
+print(df2.groupby('class').mean())
+

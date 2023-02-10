@@ -1,0 +1,21 @@
+[answer73]
+
+df2 = pl.concat([df2,df4], how="diagonal")
+df2
+
+
+----------------------------------------------
+
+[Tips]
+・複数のdataframeを連結するときはpd.concatを使用
+・how='diagonal'で縦方向にdataframe同士を結合
+・縦方向の結合には'vertical'もあるが、列数の一致しない
+　dataframe同士を結合しようとするとエ'vertical'ではエラーが出る
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 = pd.concat([df2,df4],axis=0)
+df2
+

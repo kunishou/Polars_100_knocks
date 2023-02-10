@@ -1,0 +1,26 @@
+[answer8]
+
+print(df.schema)
+print(df.select(pl.col('cabin')).schema)
+
+
+----------------------------------------------
+
+[Tips]
+・DataFrameの各列のデータ型を確認したい場合は schemaを使用
+・dataframe内の一部の列のみ抽出したい場合は
+　df.select(pl.col('列名'))
+　のように記述する。pl.col('列名').schemaとすることで該当列のみに
+　schemaを適応できる
+
+
+※なお、複数のコードの結果を表示したい場合はprintを使用する
+(printをつけない場合、2行目のschemaの結果しか表示されない)
+
+----------------------------------------------
+
+[参考] pandas記法
+
+print(df.dtypes)
+print(df['cabin'].dtype)
+

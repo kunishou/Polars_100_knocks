@@ -1,0 +1,19 @@
+[answer52]
+
+df2 = df2.rename({'English': 'Biology'})
+df2.head()
+
+
+----------------------------------------------
+
+[Tips]
+rename({'English' : 'Biology'})で
+一部の列名のみ変更可能
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 = df2.rename(columns={'English' : 'Biology'})
+df2.head()
+

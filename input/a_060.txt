@@ -1,0 +1,16 @@
+[answer60]
+
+df.select(pl.col('name').str.to_lowercase())
+
+
+----------------------------------------------
+
+[Tips]
+str.to_lowercase()で大文字を小文字に変換
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['name'].str.lower()
+

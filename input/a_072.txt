@@ -1,0 +1,19 @@
+[answer72]
+
+df2 = pl.concat([df2, df4.drop('name')], how='horizontal')
+df2
+
+
+----------------------------------------------
+
+[Tips]
+・複数のdataframeを連結するときはpd.concatを使用
+・how='horizontal'で横方向にdataframe同士を結合
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 = pd.concat([df2,df4],axis=1)
+df2
+

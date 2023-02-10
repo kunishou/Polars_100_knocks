@@ -1,0 +1,21 @@
+[answer39]
+
+df = df.with_column(pl.col('fare') + 100)
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・with_column()を使用して既存列への処理が可能
+・新しい列として追加したい場合は以下のように書く
+
+df = df.with_column((pl.col('fare') + 100).alias('fare2'))
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['fare'] = df['fare'] + 100
+df.head()
+

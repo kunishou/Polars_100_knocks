@@ -1,0 +1,24 @@
+[answer14]
+
+df.get_column('pclass').to_numpy()
+
+[別解]
+
+df.select('pclass').to_series().to_numpy()
+
+----------------------------------------------
+
+[Tips]
+・seriesに対してto_numpy()を付けることでndaaray形式に変換できる
+・get_column('列名')で特定列をseriesで抽出可能
+・selectで抽出する場合、dataframeになるためto_series()でseriesに
+　変換する必要あり
+
+df.index.tolist()
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.index.values
+

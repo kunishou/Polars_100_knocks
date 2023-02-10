@@ -1,0 +1,42 @@
+[answer9]
+
+print(df.select(pl.col('pclass')).schema)
+df = df.with_columns(pl.col('pclass').cast(pl.Utf8))
+print(df.select(pl.col('pclass')).schema)
+
+
+----------------------------------------------
+
+[Tips]
+・データ型を変更する場合は cast(データ型) で型変換可能
+
+Polarsのデータ型の一例
+　整数：pl.Int64
+　浮動小数：pl.Float64
+　文字列：pl.Utf8
+
+・新しい列を追加したり、特定列に処理をして列を更新する場合は
+　with_colmuns()を用います
+
+ex) pclass列を文字列型に変換し、新しい列としてdataframeに追加したい場合
+
+df = df.with_columns(pl.col('pclass').cast(pl.Utf8).alias('pclass2'))
+
+上記コードを実行後に以下のコードを実行するとdfに文字列型のpclass2が
+追加されていることを確認できます
+
+print(df.select(pl.col(['pclass', 'pclass2'])).schema)
+
+Output:
+{'pclass': Int64, 'pclass2': Utf8}
+
+
+----------------------------------------------
+
+[参考] pandas記法
+
+print(df['pclass'].dtype)
+df['pclass'] = df['pclass'].astype(str)
+print(df['pclass'].dtype)
+
+

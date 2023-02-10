@@ -1,0 +1,19 @@
+[answer45]
+
+df = df.with_columns([pl.lit(1).alias('test'), pl.lit(None).alias('test2')])
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・with_column()を新しい列を複数追加することもできる
+
+----------------------------------------------
+
+[参考] pandas記法
+
+
+df['test'] = 1
+df['test2'] = None
+df.head()

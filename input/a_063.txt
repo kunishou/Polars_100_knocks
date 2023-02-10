@@ -1,0 +1,25 @@
+[answer63]
+
+df5 = df5.with_column(
+    pl.col("都道府県").str.rstrip().alias("都道府県名")
+).with_column(
+    pl.concat_str(pl.col(["都道府県名", "市区町村"]), "_")
+    .alias("test2")
+).drop("都道府県名")
+df5
+
+
+----------------------------------------------
+
+[Tips]
+・文字列右側の空白を削除　str.rstrip()
+・文字列の両端の空白を削除　str.strip()
+・文字列の左側の空白を削除　str.lstrip()
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df5['test2'] = df5['都道府県'].str.rstrip() +'_'+ df5['市区町村']
+df5.head()
+

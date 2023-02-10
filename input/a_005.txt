@@ -1,0 +1,19 @@
+[answer5]
+
+df2 = pl.read_csv('../input/data1.csv')
+df2.head()
+
+
+----------------------------------------------
+
+[Tips]
+・csvを読み込む際にはread_csv()を使用する
+・read_json()やread_excel()などもある
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 = pd.read_csv('../input/data1.csv')
+df2.head()
+

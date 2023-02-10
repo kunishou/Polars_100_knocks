@@ -1,0 +1,21 @@
+[answer57]
+
+df = df.sample(frac=1.0, shuffle=True)
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・dataframeの行をシャッフルするときは
+　sample(frac=1.0, shuffle=True)と書く
+・fracに指定した値（0～1.0）でランダムサンプリングが可能
+
+df.sample(frac=0.5)
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.sample(frac=1)
+

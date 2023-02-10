@@ -1,0 +1,24 @@
+[answer81]
+
+df.select(pl.all().exclude(pl.Utf8)).pearson_corr()
+
+
+----------------------------------------------
+
+[Tips]
+・dataframeの列間の相関係数を確認したい場合は
+　pearson_corr()を使用
+・dataframeに文字列を含むとエラーになるため、計算前に
+　pl.all().exclude(pl.Utf8)で文字列を除外する
+・Polarsのpearson_corr()では数値列にnullがひとつでも
+　あると計算できないためその列の相関係数はNanになる
+　（引数でnullを無視するオプションもない）
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.corr()
+
+pandasのcorr()では自動で数値列に絞り、相関計算を実施してくれる
+また、数値列内のnullは無視して計算をしてくれる

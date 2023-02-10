@@ -1,0 +1,26 @@
+[answer7]
+
+df_copy = df.clone()
+df_copy.head()
+
+
+----------------------------------------------
+
+[Tips]
+① df_copy = df と ② df_copy = df.clone() では
+挙動が異なるので注意が必要。
+
+①の場合、df_copyはdfを参照しているだけのため、
+df側の値を変えると、df_copy側の値も変わる
+(dfとdf_copyは連動)。
+
+df側の値の変更をdf_copy側に反映させたくない
+場合には②のclone()を使う(dfとdf_copyは独立)。
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df_copy = df.copy()
+df_copy.head()
+

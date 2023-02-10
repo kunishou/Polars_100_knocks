@@ -1,0 +1,24 @@
+[answer49]
+
+df.drop_in_place('body')
+df.head()
+
+
+[別解]
+
+df = d.drop('body')
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・行・列の削除をするにはdrop_in_placeを使用
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df = df.drop('body',axis=1)
+df.head()
+

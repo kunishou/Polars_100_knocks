@@ -1,0 +1,22 @@
+[answer17]
+
+df.get_columns()[0]
+
+[別解]
+df.get_columns()[df.find_idx_by_name('pclass')]
+
+
+----------------------------------------------
+
+[Tips]
+・get_columns()[n]で、dataframeのn番目の列を
+　seriesとして抽出します
+・別解のdf.find_idx_by_name('列名')で列番号を
+　指定することも可能です。列数の多いdataframeに対して
+　get_columnsを使用する場合はこちらの書き方のほうが良いです
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['pclass']

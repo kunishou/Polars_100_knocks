@@ -1,0 +1,15 @@
+[answer56]
+
+df.get_column('survived').to_numpy()
+
+
+----------------------------------------------
+
+[Tips]
+・seriesに対してto_numpy()を付けることでndaaray形式に変換できる
+
+----------------------------------------------
+
+[参考] pandas記法]
+
+df['survived'].values

@@ -1,0 +1,17 @@
+[answer32]
+
+df.filter(pl.col('name').str.contains('Mrs'))
+
+
+----------------------------------------------
+
+[Tips]
+特定の文字列を含むデータを抽出したいときは
+str.contains('文字列')を条件に指定する
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.query('name.str.contains("Mrs")', engine='python')
+

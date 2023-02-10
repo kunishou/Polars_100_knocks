@@ -1,0 +1,23 @@
+[answer29]
+
+df.filter(pl.col('sex').eq('female') & pl.col('age').ge(40))
+
+
+----------------------------------------------
+
+[Tips]
+・等号、不等号を使わないで条件指定することも可能
+
+ex)
+ageが40に等しい pl.col('age').eq(40)　（eq: equal）
+ageが40以上　　 pl.col('age').ge(40)　（ge: greater equal）
+ageが40以下　　 pl.col('age').le(40)　（le: less equal）
+ageが40より大きい　　 pl.col('age').gt(40)　（gt: greater than）
+ageが40未満　　 pl.col('age').lt(40)　（lt: less than）
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df[(df['sex'] == 'female' ) & (df['age'] >= 40)]
+

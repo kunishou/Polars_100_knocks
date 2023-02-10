@@ -1,0 +1,20 @@
+[answer42]
+
+df.apply(lambda x: (x[df.find_idx_by_name('parch')] * 2, x[df.find_idx_by_name('sibsp')] + 1))
+
+
+----------------------------------------------
+
+[Tips]
+・apply(lambda x: (x[n] + 1))のように処理を書くことができる
+　（nは処理したい列の番号）
+・find_idx_by_name('列名')で列番号を取得することもできる
+
+----------------------------------------------
+
+[参考] pandas記法
+
+
+df['parch'] = df['parch'].apply(lambda x: x * 2)
+df['sibsp'] = df['sibsp'].apply(lambda x: x + 1)
+df.head()

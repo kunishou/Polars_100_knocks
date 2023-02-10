@@ -1,0 +1,18 @@
+[answer54]
+
+df = df.with_column(pl.col('age').fill_null(30).alias('age'))
+df.null_count()
+
+
+----------------------------------------------
+
+[Tips]
+欠損値の補完にはfill_null()を使用
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['age'] = df['age'].fillna(30)
+df['age'].isnull().sum()
+

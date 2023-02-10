@@ -1,0 +1,19 @@
+[answer61]
+
+df = df.with_column(pl.col("sex").str.replace("female", "Python"))
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・文字列の置換にはstr.replace('a', 'b')を使用
+　（文字列aを文字列bに置換）
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['sex'] = df['sex'].replace('female','Python')
+df.head()
+

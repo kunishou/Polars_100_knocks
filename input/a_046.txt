@@ -1,0 +1,18 @@
+[answer46]
+
+df = df.with_column((pl.col('cabin') + '_' + pl.col('embarked')).alias('test'))
+df.head()
+
+----------------------------------------------
+
+[Tips]
+・pl.col('列名1') + 文字列 + pl.col('列名2')で
+　特定文字列で列同士を結合することができる
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['test'] = df['cabin'] + '_' + df['embarked']
+df.head()
+

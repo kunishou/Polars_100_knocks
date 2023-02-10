@@ -1,0 +1,18 @@
+[answer47]
+
+df = df.with_column((pl.col('age').cast(pl.Utf8) + '_' + pl.col('embarked')).alias('test'))
+df.head()
+
+----------------------------------------------
+
+[Tips]
+・数値列と文字列を結合する場合は、数値列のほうを文字列型に
+　変換して結合する必要あり
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['test'] = df['age'].astype(str).str.cat(df['embarked'],sep='_')
+df.head()
+

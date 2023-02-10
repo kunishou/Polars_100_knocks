@@ -1,0 +1,19 @@
+[answer34]
+
+for col in df.columns:
+    print(col, df[col].n_unique())
+
+
+----------------------------------------------
+
+[Tips]
+・ユニークな要素数の確認にはn_nunique()を使用
+・なお、Polarsでのnunique()は重複削除のメソッドに
+　なっているので注意（pandasのdrop_duplicates()に相当）
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.nunique()
+

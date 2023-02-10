@@ -1,0 +1,16 @@
+[answer64]
+
+df2.transpose(include_header=True)
+
+
+----------------------------------------------
+
+[Tips]
+・dataframeの行と列を入れ替えるときはtranspose()を使用
+
+
+[参考] pandas記法
+
+df2 = df2.transpose()
+df2
+

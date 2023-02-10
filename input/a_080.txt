@@ -1,0 +1,32 @@
+[answer80]
+
+df2.drop_in_place('name')
+df2.groupby(['class']).agg(
+    [
+        pl.mean("*").suffix("_mean"),
+        pl.max("*").suffix("_max"),
+        pl.min("*").suffix("_min"),
+    ]
+)
+
+
+----------------------------------------------
+
+[Tips]
+・groupby(['列名']).agg()でエクスプレッションリストを渡します
+・解答の場合、class列でグルーピングした後に、すべての列に対して
+　mean、max、minの処理をしている。
+・処理結果の列には接尾語として「_mean」、「_max」、「_min」を
+　振っている
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2.drop(['name'],axis=1, inplace=True)
+pd.concat([df2.groupby('class').mean().add_suffix('_mean'),
+           df2.groupby('class').mean().add_suffix('_max'),
+           df2.groupby('class').mean().add_suffix('_min')],
+          axis=1
+         )
+

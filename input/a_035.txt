@@ -1,0 +1,20 @@
+[answer35]
+
+df.get_column('embarked').value_counts()
+
+
+----------------------------------------------
+
+[Tips]
+・ユニークな要素と出現数を確認するには
+　value_counts()を使用
+・なお、selectを用いて書きたい場合は以下のようになる
+
+df.select('embarked').to_series().value_counts()
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df['embarked'].value_counts()
+

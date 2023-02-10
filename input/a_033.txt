@@ -1,0 +1,21 @@
+[answer33]
+
+df.select(pl.col(pl.Utf8))
+
+
+----------------------------------------------
+
+[Tips]
+・特定のデータ型の列を抽出したい時は
+　select(pl.col('データ型'))のように書く
+・文字列型を以外の列を抽出した時はexcludeを用いて
+　以下のように書く
+
+df.select(pl.all().exclude(pl.Utf8))
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.select_dtypes(include='object')
+

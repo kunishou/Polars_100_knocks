@@ -1,0 +1,21 @@
+[answer37]
+
+df = df.with_row_count().with_column(pl.when(pl.col('row_nr')==3).then(40).otherwise(pl.col('age')).alias('age'))
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・when(条件).then(a).otherwise(b)で「条件に合致した場合は値aに、
+　合致しない場合は値bに置換する」という操作ができます
+・when(条件1).then(a).when(条件2).then(b)otherwise(c)というように
+　書くことも可能です（次の問題を参照）
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df.loc[3,'age'] = 40
+df.head()
+

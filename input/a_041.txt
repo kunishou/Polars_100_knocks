@@ -1,0 +1,19 @@
+[answer41]
+
+df = df.with_columns([pl.col('fare') * 2, pl.col('age')+3])
+df.head()
+
+
+----------------------------------------------
+
+[Tips]
+・with_column()を使用して複数列に対して処理することも可能
+
+----------------------------------------------
+
+[参考] pandas記法
+
+
+df['fare'] = df['fare'] * 2
+df['age'] = df['age'] + 3
+df.head()

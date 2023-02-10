@@ -1,0 +1,21 @@
+[answer76]
+
+df2.drop_in_place('class')
+print(df2.select(pl.sum(['English','Mathematics','History'])))
+print(df2.sum())
+
+
+----------------------------------------------
+
+[Tips]
+・行方向のpl.sum(['列名1','列名2'])の加算したい列名を記載して書く
+・列方向の合計値の確認はsum()を使用
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df2 = df2.drop(['class'],axis=1)
+print(df2.sum(axis=1)) #行方向の合計
+print(df2.sum()) #列方向の合計
+
