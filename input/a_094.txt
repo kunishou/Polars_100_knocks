@@ -1,0 +1,21 @@
+[answer94]
+
+features = df_copy.select(['pclass','age','sex','fare','embarked']).to_numpy()
+target = df_copy.select('survived').to_numpy()
+
+
+----------------------------------------------
+
+[Tips]
+・pandas.dataframeやpandas.Seriesをndarray形式(配列)に
+　変換するにはto_numpy()を使用
+・機械学習ライブラリのscikit-learnではndarray形式で入力する
+　必要があるため、そのような際にdataframeをndarray形式に変換する
+
+----------------------------------------------
+
+[参考] pandas記法
+
+features = df_copy[['pclass','age','sex','fare','embarked']].values
+target = df_copy['survived'].values
+

@@ -1,0 +1,38 @@
+[answer90]
+
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder() #ラベルエンコーダのインスタンスを作成
+sex = df_copy.select(pl.col('sex')).to_numpy()
+embarked = df_copy.select(pl.col('embarked')).to_numpy()
+label_sex = le.fit_transform(sex)
+label_embarked = le.fit_transform(embarked)
+df_copy = df_copy.with_columns([pl.Series(label_sex).alias("sex"), pl.Series(label_embarked).alias("embarked")])
+df_copy.head()
+
+
+----------------------------------------------
+
+[Tips]
+・機械学習では文字列をそのまま、学習アルゴリズムに
+　入力できないため、数値に変換する。LabelEncoder()では
+　例えば、以下のように文字列を数値に変換する。
+
+　male → 0
+　female → 1
+
+・RandomForestなど決定木での分類問題を
+　解く場合には、ラベルエンコーディングする
+　ことが多い
+
+----------------------------------------------
+
+[参考] pandas記法
+
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder() #ラベルエンコーダのインスタンスを作成
+
+df_copy['sex'] = le.fit_transform(df_copy['sex']) #エンコーディング
+df_copy['embarked'] = le.fit_transform(df_copy['embarked'].astype(str))  #ここ、なぜかstrに変換しないとエラー発生
+df_copy.head()

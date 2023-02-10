@@ -1,0 +1,19 @@
+[answer93]
+
+df_copy = df_copy.drop(['name', 'ticket', 'cabin', 'boat', 'body', 'home.dest'])
+df_copy.head()
+
+
+----------------------------------------------
+
+[Tips]
+・列の削除をするにはdropを使用
+・drop_in_place()が複数列の削除に対応していないため、
+　ここではdropを使用している
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df_copy = df_copy.drop(['name', 'ticket', 'cabin', 'boat', 'body', 'home.dest'],axis=1)
+df_copy

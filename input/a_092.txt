@@ -1,0 +1,20 @@
+[answer92]
+
+df_copy = df_copy.with_columns([pl.col('age').fill_null(pl.col('age').mean())])
+df_copy = df_copy.with_columns([pl.col('fare').fill_null(pl.col('fare').mean())])
+df_copy.null_count()
+
+
+----------------------------------------------
+
+[Tips]
+欠損値の補完にはfill_nullを使用
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df_copy['age'] = df_copy['age'].fillna(df_copy['age'].mean()) #欠損値にageの平均値で補完
+df_copy['fare'] = df_copy['fare'].fillna(df_copy['fare'].mean()) #欠損値にfareの平均値で補完
+print(df_copy.isnull().sum())
+

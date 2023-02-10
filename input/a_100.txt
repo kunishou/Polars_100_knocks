@@ -1,0 +1,20 @@
+[answer100]
+
+df_pred = pl.DataFrame(pred)
+df_pred.write_csv('../output/submission.csv', has_header=False)
+
+
+----------------------------------------------
+
+[Tips]
+・write_csvでcsv形式で出力
+・列名を削除して出力したいときは
+　has_header=Falseをつける
+・エンコード形式はutf8のみ
+
+----------------------------------------------
+
+[参考] pandas記法
+
+df_pred = pd.DataFrame(pred)
+df_pred.to_csv('../output/submission.csv',header=None)
