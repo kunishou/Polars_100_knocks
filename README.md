@@ -1,1 +1,2 @@
-# Polars_100_knocks
+#### ダウンロード方法  
+右上の「Code」→「Download ZIP」よりダウンロード
