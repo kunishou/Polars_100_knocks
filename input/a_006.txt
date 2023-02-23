@@ -1,24 +1,37 @@
 [answer6]
 
+df.sort('fare')
+
+[別解]
+
 df.select(pl.all().sort_by('fare'))
 
 
 ----------------------------------------------
 
 [Tips]
-・要素でソートするときはsort_by()を使用
-・デフォルトでは昇順
+・dataframe.sort()で指定した列でソートが可能
+　デフォルトでは昇順
+・pl.col().sort_by()でもソート可能
 ・降順でソートしたい場合は reverse=True を指定
 ・ソートする列を複数指定可能
+・nullを最後に表示させたい場合は nulls_last=True を指定
 
 ex) fare列で降順でソートした後にage列で降順にソートしたい場合は
 　　以下のように書く
 ※ リスト内でage列を先に書く点に注意
 
+df.sort(['age','fare'], reverse=True)
+
+(pl.col().sort_by()を使う場合)
+
 df.select(pl.all().sort_by(['age', 'fare'], reverse=True))
 
-・似たメソッドにsort()があるが、これはカラムごとに独立してソートされる点に注意
-※ dataframe全体を前処理するようなときは基本的にsort_by()を使うのが良いと思います
+
+
+・似たメソッドにpl.col().sort()があるが、これはカラムごとに独立してソートされる点に注意
+※ dataframe全体を前処理するようなときは基本的にdataframe.sort()もしくは
+　 pl.col().sort_by()を使うのが良いと思います
 
 ex) print(df.select(pl.col(['fare', 'age']).sort(reverse=True, nulls_last=True)).head())
 

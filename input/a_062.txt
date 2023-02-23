@@ -13,6 +13,11 @@ df.get_column('name')[0:1][0]
 df[0, 'name'] = re.sub('Elisabeth','',df[0, 'name'])
 df[0, 'name']
 
+[別解2]
+re.sub()を使わずreplaceでも置換可能
+
+.then(df.get_column('name')[0:1][0].replace('Elisabeth',''))
+
 ----------------------------------------------
 
 [Tips]
