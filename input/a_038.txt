@@ -12,6 +12,7 @@ df.head()
 [Tips]
 ・「'male'に該当する場合は0に、'female'に該当する場合は1に置換し、どちらにも
 　該当しない場合は元のデータを保持する」という解答になっています
+・versionが`0.16.4`以上であれば、map_dictを用いて置換することも可能です https://pola-rs.github.io/polars/py-polars/html/reference/expressions/api/polars.Expr.map_dict.html
 
 ----------------------------------------------
 
