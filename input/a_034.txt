@@ -1,5 +1,9 @@
 [answer34]
 
+df.select(pl.all().n_unique())
+
+[別解]
+
 for col in df.columns:
     print(col, df[col].n_unique())
 
