@@ -12,6 +12,7 @@ print(df.select(pl.col('age').value_counts()))
 　文字列型に変換する必要あり
 ・age列はnullが多くnull込みで最頻値を求めると、nullが最頻値になってしまうため
 　filter(~pl.col('age').is_null())でnullを除外している
+・value_counts(sort=True)と指定することでpandasと同じようにcountsが降順にソートされる
 
 ----------------------------------------------
 
